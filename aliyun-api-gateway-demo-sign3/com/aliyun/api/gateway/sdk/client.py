@@ -35,7 +35,7 @@ class DefaultClient:
         try:
             headers = self.build_headers(request)
 
-            response = Response(host=request.get_host(), url=request.get_url(), method=request.get_method(),
+            response = Response(host=request.get_host(),port=request.get_port(), url=request.get_url(), method=request.get_method(),
                                 headers=headers, protocol=request.get_protocol(), content_type=request.get_content_type(),
                                 content=request.get_body(), key_file=request.get_key_file(),
                                 cert_file=request.get_cert_file(), time_out=request.get_time_out())

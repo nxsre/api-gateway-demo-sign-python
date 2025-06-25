@@ -24,7 +24,7 @@ cli = client.DefaultClient(app_key="your appKey", app_secret="your appSecret")
 
 
 # demo of [HTTP POST form] type request
-req_post = request.Request(host=host, protocol=constant.HTTP, url=url, method="POST", time_out=30000)
+req_post = request.Request(host=host,port=8081,protocol=constant.HTTP, url=url, method="POST", time_out=30000)
 bodyMap = {"param1": "value1", "param2": "value2"}
 req_post.set_body(bodyMap)
 req_post.set_content_type(constant.CONTENT_TYPE_FORM)

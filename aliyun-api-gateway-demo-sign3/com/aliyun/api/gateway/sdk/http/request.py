@@ -6,10 +6,11 @@ class Request:
     content_length = "Content-Length"
     content_type = "Content-Type"
 
-    def __init__(self, host=None, protocol=constant.HTTP, headers=None, url=None, method=None, time_out=None):
+    def __init__(self, host=None, port=None, protocol=constant.HTTP, headers=None, url=None, method=None, time_out=None):
         if headers is None:
             headers = {}
         self.__host = host
+        self.__port = port
         self.__url = url
         self.__method = method
         self.__time_out = time_out
@@ -35,6 +36,9 @@ class Request:
 
     def get_host(self):
         return self.__host
+
+    def get_port(self):
+        return self.__port
 
     def set_host(self, host):
         self.__host = host
